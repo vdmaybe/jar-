@@ -1,0 +1,55 @@
+/* Save this as styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    position: relative;
+}
+
+#jar-image {
+    max-width: 100%;
+}
+
+#jar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflowing notes */
+}
+
+.note {
+    cursor: pointer;
+    position: absolute;
+    background-color: #ffd700; /* Gold color for notes */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px; /* Rounded corners for a pleasing look */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Default z-index for notes */
+}
+
+.note.active {
+    transform: rotate(-5deg) scale(1.2); /* Expand and rotate the active note */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Set a higher z-index for the active note */
+}
+
+.message {
+    display: none;
+    margin-top: 10px;
+}
+
+.note.active .message {
+    display: block;
+}
